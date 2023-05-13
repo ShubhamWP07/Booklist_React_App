@@ -1,9 +1,14 @@
 import React from "react";
+import BookShow from "./BookShow";
 
-const BookList = () => {
+const BookList = ({ books }) => {
+  const renderedBooks = books.map((book) => {
+    return <BookShow key={book.id} book={book} />;
+  });
+
   return (
     <>
-      <h1>BookList</h1>
+      <div className="book-list">{renderedBooks}</div>
     </>
   );
 };
