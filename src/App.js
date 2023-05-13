@@ -6,9 +6,11 @@ const App = () => {
   const [books, setBooks] = useState([]);
 
   const createBook = (title) => {
-    const upadtedBooks = [...books, { id: 123, title: title }];
+    const upadtedBooks = [
+      ...books,
+      { id: Math.round(Math.random() * 5), title: title },
+    ];
     setBooks(upadtedBooks);
-    console.log([books]);
   };
 
   return (
